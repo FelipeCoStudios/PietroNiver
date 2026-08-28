@@ -1,16 +1,13 @@
 (() => {
-const parts = [];
-function loadNext(i) {
-  if (i >= 2) {
-    const s = atob(parts.join(''));
-    (0, eval)(s);
-    return;
-  }
-  const sc = document.createElement('script');
-  sc.src = 'game-data-' + i + '.js';
-  sc.onload = () => loadNext(i+1);
-  document.head.appendChild(sc);
+async function run() {
+  const bin = Uint8Array.from(atob("PLACEHOLDER_USE_FILE"), c => c.charCodeAt(0));
+  const ds = new DecompressionStream("gzip");
+  const stream = new Blob([bin]).stream().pipeThrough(ds);
+  const s = await new Response(stream).text();
+  (0, eval)(s);
 }
-window.__pushGameB64 = (chunk) => parts.push(chunk);
-loadNext(0);
+run().catch(e => {
+  console.error(e);
+  document.body.innerHTML = "<h1 style=\"color:#FFD700;font-family:Arial;text-align:center;margin-top:40vh\">Resenha Fut 9C edition</h1>";
+});
 })();
