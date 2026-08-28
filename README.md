@@ -1,4 +1,4 @@
-# Crazy Cartoon Football
+# Resenha Fut 9C edition
 
 Jogo de futebol arcade/cartoon caótico em HTML5 puro.
 
@@ -45,5 +45,5 @@ O jogo gera sons via Web Audio se não houver arquivos.
 
 ## Créditos
 
-Crazy Cartoon Football — HTML5 / Canvas / Web Audio  
+Resenha Fut 9C edition — HTML5 / Canvas / Web Audio  
 MIT License
